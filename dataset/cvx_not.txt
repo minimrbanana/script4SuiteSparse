@@ -1,0 +1,14 @@
+test_suite_ncvx2('circuit_simulation_problem');
+test_suite_ncvx3('circuit_simulation_problem');
+
+test_suite_ncvx2('computational_fluid_dynamics_problem');
+test_suite_ncvx3('computational_fluid_dynamics_problem');
+
+test_suite_ncvx2('optimization_problem');
+test_suite_ncvx3('optimization_problem');
+
+test_suite_ncvx2('structural_problem');
+test_suite_ncvx3('structural_problem');
+
+test_suite_ncvx2('structural2_problem');
+test_suite_ncvx3('structural2_problem');

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+    <title>Search the University Florida Matrix Collection</title>
+
+ <link rel="stylesheet" type="text/css" href="optimization_cvx_files/gallery.css">
+  <link rel="stylesheet" type="text/css" href="optimization_cvx_files/gallery2.css">
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+   <script src="optimization_cvx_files/jquery-1.js"></script>
+ <script src="optimization_cvx_files/search.js"></script><script type="text/javascript" src="optimization_cvx_files/UFLdata.js"></script><script type="text/javascript" src="optimization_cvx_files/UFLdata.js"></script>
+
+
+  </head>
+  <body>
+
+
+
+<h2>
+
+Search The University of Florida Sparse Matrix Collection
+
+</h2>
+
+<hr>
+
+<pre>
+</pre>
+
+<b>Fill in one or more of the following fields and click on "search"</b>
+
+    <div id="container">
+
+     <form name="search">
+
+
+<table>
+
+
+<tbody><tr>
+<td>
+     <input size="25" name="keyword" action="searchUFL(document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value);" value="optimization problem" type="text"> Keyword (contained in group, name, kind, author, editor and notes)
+</td>
+
+</tr><tr>
+<td>
+More than <input name="MinRows" size="8" type="text"> but 
+less than <input name="MaxRows" size="8" type="text"> rows. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinCols" size="8" type="text">  but
+less than <input name="MaxCols" size="8" type="text">  columns. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinNz" size="8" type="text"> but 
+less than <input name="MaxNz" size="8" type="text"> nonzeros. 
+</td>
+</tr>
+<tr>
+<td title="percentage of entries such that i,j and j,i are both present">
+More than <input name="MinPatternSym" size="8" type="text"> but 
+less than <input name="MaxPatternSym" size="8" type="text"> % nonzero pattern symmetry. 
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="numerical symmetries" align="left">
+Structure
+
+<select name="Structure">
+<option> Any
+</option><option selected="selected"> symmetric
+</option><option> Hermitian
+</option><option> skew-symmetric
+</option><option> unsymmetric
+</option><option> rectangular
+</option><option> square
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="positive definite?" align="left">
+Positive definite?
+<select name="posdef">
+<option> Any
+</option><option selected="selected"> yes
+</option><option> no
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="entry value types" align="left">
+Type
+
+<select name="type">
+<option> Any
+</option><option selected="selected"> real
+</option><option> complex
+</option><option> integer
+</option><option> binary
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td>
+Group: <input name="group" size="8" type="text">  Name: <input name="name" size="8" type="text">
+</td>
+</tr>
+
+<tr>
+<td>
+Year: between <input name="afterDate" size="8" type="text"> 
+and <input name="beforeDate" size="8" type="text"> (integer year, e.g., 2001-2010)
+</td>
+</tr>
+<tr>
+<td>
+ID: between <input name="afterID" size="8" type="text"> 
+and <input name="beforeID" size="8" type="text"> (integer IDs, e.g., between 2300-)
+</td>
+</tr>
+
+</tbody></table>
+
+     <input value="Search" onclick="searchUFL(document.search.afterID.value, document.search.beforeID.value, document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value); return false;" type="submit">
+
+
+
+     </form>
+
+
+<table>
+<tbody><tr>
+<td>
+     <div id="TableWrapper" style="display: inline; overflow: auto; width: 100%; height: 100% "><p>Search results: 6 matrices found.</p><table border="1"><tbody><tr><td><b>hit</b></td><td><b>ID</b></td><td><div onclick='make_table(6,hitdata,"grp_descend");'><table><tbody><tr><td> <u><a title="sort"><b>group</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(6,hitdata,"name_descend");'><table><tbody><tr><td> <u><a title="sort"><b>name</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><b>image</b></td><td><div onclick='make_table(6,hitdata,"row_ascend");'><table><tbody><tr><td> <u><a title="sort"><b>rows</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(6,hitdata,"col_descend");'><table><tbody><tr><td> <u><a title="sort"><b>cols</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(6,hitdata,"nz_descend");'><table><tbody><tr><td> <u><a title="sort"><b>nonzeros</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(6,hitdata,"kind_descend");'><table><tbody><tr><td> <u><a title="sort"><b>kind</b></a></u></td><td><img src="optimization_cvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><table><tbody><tr><td><b>Matrix Market</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Matlab</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Rutherford/Boeing</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td></tr><tr><td>1</td><td>1310</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/cvxbqp1.html">cvxbqp1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@cvxbqp1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdefcvxbqp1.gif" alt="" width="140" border="0"></a></td><td>50000</td><td>50000</td><td>349968</td><td>optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/cvxbqp1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/cvxbqp1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/cvxbqp1.tar.gz"> download </a></td></tr><tr><td>2</td><td>1311</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/gridgena.html">gridgena</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@gridgena.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdefgridgena.gif" alt="" width="140" border="0"></a></td><td>48962</td><td>48962</td><td>512084</td><td>optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/gridgena.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/gridgena.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/gridgena.tar.gz"> download </a></td></tr><tr><td>3</td><td>1313</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/minsurfo.html">minsurfo</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@minsurfo.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdefminsurfo.gif" alt="" width="140" border="0"></a></td><td>40806</td><td>40806</td><td>203622</td><td>optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/minsurfo.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/minsurfo.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/minsurfo.tar.gz"> download </a></td></tr><tr><td>4</td><td>1312</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/jnlbrng1.html">jnlbrng1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@jnlbrng1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdefjnlbrng1.gif" alt="" width="140" border="0"></a></td><td>40000</td><td>40000</td><td>199200</td><td>optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/jnlbrng1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/jnlbrng1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/jnlbrng1.tar.gz"> download </a></td></tr><tr><td>5</td><td>1314</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/obstclae.html">obstclae</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@obstclae.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdefobstclae.gif" alt="" width="140" border="0"></a></td><td>40000</td><td>40000</td><td>197608</td><td>optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/obstclae.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/obstclae.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/obstclae.tar.gz"> download </a></td></tr><tr><td>6</td><td>1315</td><td>GHS_psdef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_psdef/torsion1.html">torsion1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_psdef@torsion1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="optimization_cvx_files/GHS_psdeftorsion1.gif" alt="" width="140" border="0"></a></td><td>40000</td><td>40000</td><td>197608</td><td>duplicate optimization problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_psdef/torsion1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_psdef/torsion1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_psdef/torsion1.tar.gz"> download </a></td></tr></tbody></table>
+</div></td></tr></tbody></table></div></body></html>

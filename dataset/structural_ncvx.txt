@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+    <title>Search the University Florida Matrix Collection</title>
+
+ <link rel="stylesheet" type="text/css" href="structural_ncvx_files/gallery.css">
+  <link rel="stylesheet" type="text/css" href="structural_ncvx_files/gallery2.css">
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+   <script src="structural_ncvx_files/jquery-1.js"></script>
+ <script src="structural_ncvx_files/search.js"></script><script type="text/javascript" src="structural_ncvx_files/UFLdata.js"></script><script type="text/javascript" src="structural_ncvx_files/UFLdata.js"></script>
+
+
+  </head>
+  <body>
+
+
+
+<h2>
+
+Search The University of Florida Sparse Matrix Collection
+
+</h2>
+
+<hr>
+
+<pre>
+</pre>
+
+<b>Fill in one or more of the following fields and click on "search"</b>
+
+    <div id="container">
+
+     <form name="search">
+
+
+<table>
+
+
+<tbody><tr>
+<td>
+     <input size="25" name="keyword" action="searchUFL(document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value);" value="structural" type="text"> Keyword (contained in group, name, kind, author, editor and notes)
+</td>
+
+</tr><tr>
+<td>
+More than <input name="MinRows" size="8" type="text"> but 
+less than <input name="MaxRows" size="8" type="text"> rows. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinCols" size="8" type="text">  but
+less than <input name="MaxCols" size="8" type="text">  columns. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinNz" size="8" type="text"> but 
+less than <input name="MaxNz" size="8" type="text"> nonzeros. 
+</td>
+</tr>
+<tr>
+<td title="percentage of entries such that i,j and j,i are both present">
+More than <input name="MinPatternSym" size="8" type="text"> but 
+less than <input name="MaxPatternSym" size="8" type="text"> % nonzero pattern symmetry. 
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="numerical symmetries" align="left">
+Structure
+
+<select name="Structure">
+<option> Any
+</option><option selected="selected"> symmetric
+</option><option> Hermitian
+</option><option> skew-symmetric
+</option><option> unsymmetric
+</option><option> rectangular
+</option><option> square
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="positive definite?" align="left">
+Positive definite?
+<select name="posdef">
+<option> Any
+</option><option> yes
+</option><option selected="selected"> no
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="entry value types" align="left">
+Type
+
+<select name="type">
+<option> Any
+</option><option selected="selected"> real
+</option><option> complex
+</option><option> integer
+</option><option> binary
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td>
+Group: <input name="group" size="8" type="text">  Name: <input name="name" size="8" type="text">
+</td>
+</tr>
+
+<tr>
+<td>
+Year: between <input name="afterDate" size="8" type="text"> 
+and <input name="beforeDate" size="8" type="text"> (integer year, e.g., 2001-2010)
+</td>
+</tr>
+<tr>
+<td>
+ID: between <input name="afterID" size="8" type="text"> 
+and <input name="beforeID" size="8" type="text"> (integer IDs, e.g., between 2300-)
+</td>
+</tr>
+
+</tbody></table>
+
+     <input value="Search" onclick="searchUFL(document.search.afterID.value, document.search.beforeID.value, document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value); return false;" type="submit">
+
+
+
+     </form>
+
+
+<table>
+<tbody><tr>
+<td>
+     <div id="TableWrapper" style="display: inline; overflow: auto; width: 100%; height: 100% "><p>Search results: 25 matrices found.</p><table border="1"><tbody><tr><td><b>hit</b></td><td><b>ID</b></td><td><div onclick='make_table(25,hitdata,"grp_descend");'><table><tbody><tr><td> <u><a title="sort"><b>group</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(25,hitdata,"name_descend");'><table><tbody><tr><td> <u><a title="sort"><b>name</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><b>image</b></td><td><div onclick='make_table(25,hitdata,"row_ascend");'><table><tbody><tr><td> <u><a title="sort"><b>rows</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(25,hitdata,"col_descend");'><table><tbody><tr><td> <u><a title="sort"><b>cols</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(25,hitdata,"nz_descend");'><table><tbody><tr><td> <u><a title="sort"><b>nonzeros</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(25,hitdata,"kind_descend");'><table><tbody><tr><td> <u><a title="sort"><b>kind</b></a></u></td><td><img src="structural_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><table><tbody><tr><td><b>Matrix Market</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Matlab</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Rutherford/Boeing</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td></tr><tr><td>1</td><td>1586</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell10.html">af_shell10</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell10.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell10.gif" alt="" width="140" border="0"></a></td><td>1508065</td><td>1508065</td><td>52259885</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell10.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell10.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell10.tar.gz"> download </a></td></tr><tr><td>2</td><td>940</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell1.html">af_shell1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell1.gif" alt="" width="140" border="0"></a></td><td>504855</td><td>504855</td><td>17562051</td><td>structural problem sequence</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell1.tar.gz"> download </a></td></tr><tr><td>3</td><td>941</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell2.html">af_shell2</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell2.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell2.gif" alt="" width="140" border="0"></a></td><td>504855</td><td>504855</td><td>17562051</td><td>subsequent structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell2.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell2.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell2.tar.gz"> download </a></td></tr><tr><td>4</td><td>944</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell5.html">af_shell5</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell5.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell5.gif" alt="" width="140" border="0"></a></td><td>504855</td><td>504855</td><td>17579155</td><td>subsequent structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell5.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell5.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell5.tar.gz"> download </a></td></tr><tr><td>5</td><td>945</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell6.html">af_shell6</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell6.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell6.gif" alt="" width="140" border="0"></a></td><td>504855</td><td>504855</td><td>17579155</td><td>subsequent structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell6.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell6.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell6.tar.gz"> download </a></td></tr><tr><td>6</td><td>948</td><td>Schenk_AFE</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Schenk_AFE/af_shell9.html">af_shell9</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Schenk_AFE@af_shell9.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Schenk_AFEaf_shell9.gif" alt="" width="140" border="0"></a></td><td>504855</td><td>504855</td><td>17588845</td><td>subsequent structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Schenk_AFE/af_shell9.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Schenk_AFE/af_shell9.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Schenk_AFE/af_shell9.tar.gz"> download </a></td></tr><tr><td>7</td><td>1411</td><td>Koutsovasilis</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Koutsovasilis/F1.html">F1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Koutsovasilis@F1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/KoutsovasilisF1.gif" alt="" width="140" border="0"></a></td><td>343791</td><td>343791</td><td>26837113</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Koutsovasilis/F1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Koutsovasilis/F1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Koutsovasilis/F1.tar.gz"> download </a></td></tr><tr><td>8</td><td>1213</td><td>Lin</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Lin/Lin.html">Lin</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Lin@Lin.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/LinLin.gif" alt="" width="140" border="0"></a></td><td>256000</td><td>256000</td><td>1766400</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Lin/Lin.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Lin/Lin.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Lin/Lin.tar.gz"> download </a></td></tr><tr><td>9</td><td>1219</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/bmw3_2.html">bmw3_2</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@bmw3_2.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/GHS_indefbmw3_2.gif" alt="" width="140" border="0"></a></td><td>227362</td><td>227362</td><td>11288630</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/bmw3_2.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/bmw3_2.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/bmw3_2.tar.gz"> download </a></td></tr><tr><td>10</td><td>1861</td><td>Koutsovasilis</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Koutsovasilis/F2.html">F2</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Koutsovasilis@F2.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/KoutsovasilisF2.gif" alt="" width="140" border="0"></a></td><td>71505</td><td>71505</td><td>5294285</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Koutsovasilis/F2.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Koutsovasilis/F2.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Koutsovasilis/F2.tar.gz"> download </a></td></tr><tr><td>11</td><td>1233</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/dawson5.html">dawson5</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@dawson5.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/GHS_indefdawson5.gif" alt="" width="140" border="0"></a></td><td>51537</td><td>51537</td><td>1010777</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/dawson5.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/dawson5.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/dawson5.tar.gz"> download </a></td></tr><tr><td>12</td><td>1308</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/sparsine.html">sparsine</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@sparsine.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/GHS_indefsparsine.gif" alt="" width="140" border="0"></a></td><td>50000</td><td>50000</td><td>1548988</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/sparsine.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/sparsine.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/sparsine.tar.gz"> download </a></td></tr><tr><td>13</td><td>846</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstk39.html">bcsstk39</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstk39.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstk39.gif" alt="" width="140" border="0"></a></td><td>46772</td><td>46772</td><td>2060662</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstk39.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstk39.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstk39.tar.gz"> download </a></td></tr><tr><td>14</td><td>340</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstk35.html">bcsstk35</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstk35.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstk35.gif" alt="" width="140" border="0"></a></td><td>30237</td><td>30237</td><td>1450163</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstk35.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstk35.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstk35.tar.gz"> download </a></td></tr><tr><td>15</td><td>345</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstm35.html">bcsstm35</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstm35.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstm35.gif" alt="" width="140" border="0"></a></td><td>30237</td><td>30237</td><td>20619</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstm35.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstm35.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstm35.tar.gz"> download </a></td></tr><tr><td>16</td><td>342</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstk37.html">bcsstk37</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstk37.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstk37.gif" alt="" width="140" border="0"></a></td><td>25503</td><td>25503</td><td>1140977</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstk37.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstk37.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstk37.tar.gz"> download </a></td></tr><tr><td>17</td><td>347</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstm37.html">bcsstm37</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstm37.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstm37.gif" alt="" width="140" border="0"></a></td><td>25503</td><td>25503</td><td>15525</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstm37.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstm37.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstm37.tar.gz"> download </a></td></tr><tr><td>18</td><td>346</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstm36.html">bcsstm36</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstm36.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstm36.gif" alt="" width="140" border="0"></a></td><td>23052</td><td>23052</td><td>320606</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstm36.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstm36.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstm36.tar.gz"> download </a></td></tr><tr><td>19</td><td>348</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstm38.html">bcsstm38</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstm38.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstm38.gif" alt="" width="140" border="0"></a></td><td>8032</td><td>8032</td><td>10485</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstm38.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstm38.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstm38.tar.gz"> download </a></td></tr><tr><td>20</td><td>363</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/nasa1824.html">nasa1824</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@nasa1824.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingnasa1824.gif" alt="" width="140" border="0"></a></td><td>1824</td><td>1824</td><td>39208</td><td>duplicate structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/nasa1824.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/nasa1824.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/nasa1824.tar.gz"> download </a></td></tr><tr><td>21</td><td>77</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/bcsstm27.html">bcsstm27</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@bcsstm27.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/HBbcsstm27.gif" alt="" width="140" border="0"></a></td><td>1224</td><td>1224</td><td>56126</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/bcsstm27.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/bcsstm27.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/bcsstm27.tar.gz"> download </a></td></tr><tr><td>22</td><td>65</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/bcsstm10.html">bcsstm10</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@bcsstm10.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/HBbcsstm10.gif" alt="" width="140" border="0"></a></td><td>1086</td><td>1086</td><td>22092</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/bcsstm10.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/bcsstm10.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/bcsstm10.tar.gz"> download </a></td></tr><tr><td>23</td><td>344</td><td>Boeing</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/Boeing/bcsstm34.html">bcsstm34</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/Boeing@bcsstm34.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/Boeingbcsstm34.gif" alt="" width="140" border="0"></a></td><td>588</td><td>588</td><td>24270</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/Boeing/bcsstm34.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/Boeing/bcsstm34.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/Boeing/bcsstm34.tar.gz"> download </a></td></tr><tr><td>24</td><td>59</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/bcsstm04.html">bcsstm04</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@bcsstm04.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/HBbcsstm04.gif" alt="" width="140" border="0"></a></td><td>132</td><td>132</td><td>66</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/bcsstm04.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/bcsstm04.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/bcsstm04.tar.gz"> download </a></td></tr><tr><td>25</td><td>58</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/bcsstm03.html">bcsstm03</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@bcsstm03.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="structural_ncvx_files/HBbcsstm03.gif" alt="" width="140" border="0"></a></td><td>112</td><td>112</td><td>72</td><td>structural problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/bcsstm03.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/bcsstm03.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/bcsstm03.tar.gz"> download </a></td></tr></tbody></table>
+</div></td></tr></tbody></table></div></body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+    <title>Search the University Florida Matrix Collection</title>
+
+ <link rel="stylesheet" type="text/css" href="fluid_ncvx_files/gallery.css">
+  <link rel="stylesheet" type="text/css" href="fluid_ncvx_files/gallery2.css">
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+   <script src="fluid_ncvx_files/jquery-1.js"></script>
+ <script src="fluid_ncvx_files/search.js"></script><script type="text/javascript" src="fluid_ncvx_files/UFLdata.js"></script><script type="text/javascript" src="fluid_ncvx_files/UFLdata.js"></script>
+
+
+  </head>
+  <body>
+
+
+
+<h2>
+
+Search The University of Florida Sparse Matrix Collection
+
+</h2>
+
+<hr>
+
+<pre>
+</pre>
+
+<b>Fill in one or more of the following fields and click on "search"</b>
+
+    <div id="container">
+
+     <form name="search">
+
+
+<table>
+
+
+<tbody><tr>
+<td>
+     <input size="25" name="keyword" action="searchUFL(document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value);" value="fluid" type="text"> Keyword (contained in group, name, kind, author, editor and notes)
+</td>
+
+</tr><tr>
+<td>
+More than <input name="MinRows" size="8" type="text"> but 
+less than <input name="MaxRows" size="8" type="text"> rows. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinCols" size="8" type="text">  but
+less than <input name="MaxCols" size="8" type="text">  columns. 
+</td>
+</tr>
+<tr>
+<td>
+More than <input name="MinNz" size="8" type="text"> but 
+less than <input name="MaxNz" size="8" type="text"> nonzeros. 
+</td>
+</tr>
+<tr>
+<td title="percentage of entries such that i,j and j,i are both present">
+More than <input name="MinPatternSym" size="8" type="text"> but 
+less than <input name="MaxPatternSym" size="8" type="text"> % nonzero pattern symmetry. 
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="numerical symmetries" align="left">
+Structure
+
+<select name="Structure">
+<option> Any
+</option><option selected="selected"> symmetric
+</option><option> Hermitian
+</option><option> skew-symmetric
+</option><option> unsymmetric
+</option><option> rectangular
+</option><option> square
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="positive definite?" align="left">
+Positive definite?
+<select name="posdef">
+<option> Any
+</option><option> yes
+</option><option selected="selected"> no
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" title="entry value types" align="left">
+Type
+
+<select name="type">
+<option> Any
+</option><option selected="selected"> real
+</option><option> complex
+</option><option> integer
+</option><option> binary
+</option></select>
+</td>
+</tr>
+
+<tr>
+<td>
+Group: <input name="group" size="8" type="text">  Name: <input name="name" size="8" type="text">
+</td>
+</tr>
+
+<tr>
+<td>
+Year: between <input name="afterDate" size="8" type="text"> 
+and <input name="beforeDate" size="8" type="text"> (integer year, e.g., 2001-2010)
+</td>
+</tr>
+<tr>
+<td>
+ID: between <input name="afterID" size="8" type="text"> 
+and <input name="beforeID" size="8" type="text"> (integer IDs, e.g., between 2300-)
+</td>
+</tr>
+
+</tbody></table>
+
+     <input value="Search" onclick="searchUFL(document.search.afterID.value, document.search.beforeID.value, document.search.keyword.value, document.search.MinRows.value, document.search.MaxRows.value, document.search.MinCols.value, document.search.MaxCols.value, document.search.MinNz.value, document.search.MaxNz.value, document.search.MinPatternSym.value, document.search.MaxPatternSym.value, document.search.Structure.value, document.search.posdef.value, document.search.type.value, document.search.group.value, document.search.name.value, document.search.afterDate.value, document.search.beforeDate.value); return false;" type="submit">
+
+
+
+     </form>
+
+
+<table>
+<tbody><tr>
+<td>
+     <div id="TableWrapper" style="display: inline; overflow: auto; width: 100%; height: 100% "><p>Search results: 13 matrices found.</p><table border="1"><tbody><tr><td><b>hit</b></td><td><b>ID</b></td><td><div onclick='make_table(13,hitdata,"grp_descend");'><table><tbody><tr><td> <u><a title="sort"><b>group</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(13,hitdata,"name_descend");'><table><tbody><tr><td> <u><a title="sort"><b>name</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><b>image</b></td><td><div onclick='make_table(13,hitdata,"row_ascend");'><table><tbody><tr><td> <u><a title="sort"><b>rows</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(13,hitdata,"col_descend");'><table><tbody><tr><td> <u><a title="sort"><b>cols</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(13,hitdata,"nz_descend");'><table><tbody><tr><td> <u><a title="sort"><b>nonzeros</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><div onclick='make_table(13,hitdata,"kind_descend");'><table><tbody><tr><td> <u><a title="sort"><b>kind</b></a></u></td><td><img src="fluid_ncvx_files/updown.jpg" alt="sort"></td></tr></tbody></table></div></td><td><table><tbody><tr><td><b>Matrix Market</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Matlab</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td><td><table><tbody><tr><td><b>Rutherford/Boeing</b></td></tr><tr><td><b>format</b></td></tr></tbody></table></td></tr><tr><td>1</td><td>1230</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/copter2.html">copter2</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@copter2.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/GHS_indefcopter2.gif" alt="" width="140" border="0"></a></td><td>55476</td><td>55476</td><td>759952</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/copter2.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/copter2.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/copter2.tar.gz"> download </a></td></tr><tr><td>2</td><td>1246</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/stokes128.html">stokes128</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@stokes128.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/GHS_indefstokes128.gif" alt="" width="140" border="0"></a></td><td>49666</td><td>49666</td><td>558594</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/stokes128.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/stokes128.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/stokes128.tar.gz"> download </a></td></tr><tr><td>3</td><td>1247</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/stokes64.html">stokes64</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@stokes64.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/GHS_indefstokes64.gif" alt="" width="140" border="0"></a></td><td>12546</td><td>12546</td><td>140034</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/stokes64.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/stokes64.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/stokes64.tar.gz"> download </a></td></tr><tr><td>4</td><td>1248</td><td>GHS_indef</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/GHS_indef/stokes64s.html">stokes64s</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/GHS_indef@stokes64s.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/GHS_indefstokes64s.gif" alt="" width="140" border="0"></a></td><td>12546</td><td>12546</td><td>140034</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/GHS_indef/stokes64s.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/GHS_indef/stokes64s.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/GHS_indef/stokes64s.tar.gz"> download </a></td></tr><tr><td>5</td><td>410</td><td>FIDAP</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/FIDAP/ex12.html">ex12</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/FIDAP@ex12.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/FIDAPex12.gif" alt="" width="140" border="0"></a></td><td>3973</td><td>3973</td><td>79077</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/FIDAP/ex12.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/FIDAP/ex12.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/FIDAP/ex12.tar.gz"> download </a></td></tr><tr><td>6</td><td>241</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/saylr4.html">saylr4</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@saylr4.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/HBsaylr4.gif" alt="" width="140" border="0"></a></td><td>3564</td><td>3564</td><td>22316</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/saylr4.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/saylr4.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/saylr4.tar.gz"> download </a></td></tr><tr><td>7</td><td>412</td><td>FIDAP</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/FIDAP/ex14.html">ex14</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/FIDAP@ex14.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/FIDAPex14.gif" alt="" width="140" border="0"></a></td><td>3251</td><td>3251</td><td>65875</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/FIDAP/ex14.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/FIDAP/ex14.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/FIDAP/ex14.tar.gz"> download </a></td></tr><tr><td>8</td><td>68</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/bcsstm13.html">bcsstm13</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@bcsstm13.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/HBbcsstm13.gif" alt="" width="140" border="0"></a></td><td>2003</td><td>2003</td><td>21181</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/bcsstm13.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/bcsstm13.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/bcsstm13.tar.gz"> download </a></td></tr><tr><td>9</td><td>434</td><td>FIDAP</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/FIDAP/ex4.html">ex4</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/FIDAP@ex4.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/FIDAPex4.gif" alt="" width="140" border="0"></a></td><td>1601</td><td>1601</td><td>31849</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/FIDAP/ex4.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/FIDAP/ex4.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/FIDAP/ex4.tar.gz"> download </a></td></tr><tr><td>10</td><td>429</td><td>FIDAP</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/FIDAP/ex32.html">ex32</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/FIDAP@ex32.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/FIDAPex32.gif" alt="" width="140" border="0"></a></td><td>1159</td><td>1159</td><td>11047</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/FIDAP/ex32.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/FIDAP/ex32.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/FIDAP/ex32.tar.gz"> download </a></td></tr><tr><td>11</td><td>240</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/saylr3.html">saylr3</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@saylr3.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/HBsaylr3.gif" alt="" width="140" border="0"></a></td><td>1000</td><td>1000</td><td>3750</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/saylr3.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/saylr3.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/saylr3.tar.gz"> download </a></td></tr><tr><td>12</td><td>242</td><td>HB</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/HB/sherman1.html">sherman1</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/HB@sherman1.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/HBsherman1.gif" alt="" width="140" border="0"></a></td><td>1000</td><td>1000</td><td>3750</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/HB/sherman1.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/HB/sherman1.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/HB/sherman1.tar.gz"> download </a></td></tr><tr><td>13</td><td>416</td><td>FIDAP</td><td><a href="http://www.cise.ufl.edu/research/sparse/matrices/FIDAP/ex2.html">ex2</a></td><td><a href="http://yifanhu.net/GALLERY/GRAPHS/GIF_SMALL/FIDAP@ex2.html" style="text-decoration: none;" border="0"><img class="thumbnail" src="fluid_ncvx_files/FIDAPex2.gif" alt="" width="140" border="0"></a></td><td>441</td><td>441</td><td>26839</td><td>computational fluid dynamics problem</td><td><a href="http://www.cise.ufl.edu/research/sparse/MM/FIDAP/ex2.tar.gz"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/mat/FIDAP/ex2.mat"> download </a></td><td><a href="http://www.cise.ufl.edu/research/sparse/RB/FIDAP/ex2.tar.gz"> download </a></td></tr></tbody></table>
+</div></td></tr></tbody></table></div></body></html>
